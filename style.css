@@ -1,8 +1,21 @@
+body {
+    padding: 0;
+    margin: 0;
+    background-size: cover;
+    background: linear-gradient(to bottom right, red, #ECFF00, #00FF37);
+    background-repeat: no-repeat;
+}
+
 .tables {
     border: 1px solid black;
-    height: 75px;
+    padding: 0.5% 0.5% 0.5% 0.5%;
 }
 
 .ecart {
     margin-top: 75px;
+}
+
+img{
+    height: 65px;
+    width: 65px;
 }
