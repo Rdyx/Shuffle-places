@@ -1,7 +1,8 @@
-var array = [];
 var getaudio = $('#player')[0];
 
 $('#shuffle').click(function () {
+    //Set du tableau à 0 pour éviter les bugs doublons si plusieurs clicks
+    var array = [];
     //Requête ajax des données googlesheet
     $.ajax({
         url: "https://spreadsheets.google.com/feeds/list/" + $('#keyInput').val() + "/od6/public/values?alt=json",
@@ -14,8 +15,8 @@ $('#shuffle').click(function () {
             //var fonction shuffle pour randomize les id tableau
             var array2 = shuffle(array);
             //injection txt + img dans les balises
-            for (var i = 0; i < 15; i++) {
-                $('#table' + i + '').html(array2[i][0] + '<br><img src="' + array2[i][1] + '">');
+            for (var j = 0; j < 15; j++) {
+                $('#table' + j + '').html(array2[j][0] + '<br><img src="' + array2[j][1] + '">');
             }
             //Lancement zik + boucle
             getaudio.load();
@@ -25,6 +26,8 @@ $('#shuffle').click(function () {
             if ($('#content').is(":hidden")) {
                 $('#content').slideDown(5000);
             };
+            //fond cancer
+            boucleFond();
         }
     });
 
@@ -35,7 +38,24 @@ $('#shuffle').click(function () {
 function boucleZik() {
     setTimeout(function () {
         getaudio.play();
+        boucleZik();
     }, 32000);
+}
+
+function boucleFond() {
+    setTimeout(function back1() {
+        $('#cancer').addClass('back2');
+        $('#cancer').removeClass('back1');
+    }, 100);
+    setTimeout(function back2() {
+        $('#cancer').addClass('back3');
+        $('#cancer').removeClass('back2');
+    }, 200);
+    setTimeout(function back3() {
+        $('#cancer').addClass('back1');
+        $('#cancer').removeClass('back3');
+        boucleFond();
+    }, 300);
 }
 
 //shuffle tableau

@@ -6,13 +6,25 @@ body {
     background-repeat: no-repeat;
 }
 
+.back1 {
+    background: linear-gradient(to bottom right, red, #ECFF00, #00FF37);
+}
+
+.back2 {
+    background : linear-gradient(to bottom right, #00FF37, red, #ECFF00);
+}
+
+.back3 {
+    background : linear-gradient(to bottom right, #ECFF00, #00FF37, red);
+}
 .tables {
     border: 1px solid black;
     padding: 0.5% 0.5% 0.5% 0.5%;
+    background-color: white;
 }
 
 .ecart {
-    margin-top: 75px;
+    margin-top: 60px;
 }
 
 img{
