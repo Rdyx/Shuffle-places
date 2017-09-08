@@ -21,5 +21,13 @@ img{
 }
 
 #shuffle {
-    margin-top: 15px;
+    margin: 0 0 15px 0;
+}
+
+.cached {
+    display: none;
+}
+
+input {
+    margin: 2% 0 2% 0;
 }
