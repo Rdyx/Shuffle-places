@@ -30,8 +30,6 @@ $('#shuffle').click(function () {
             boucleFond();
         }
     });
-
-
 });
 
 //Fonction pour boucler la zik et danser all night long
